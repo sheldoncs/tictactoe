@@ -14,6 +14,7 @@ namespace tictactoe.Data.Database
         Task<int> findPlayer(int game_id, string name);
         Task<IReadOnlyCollection<PlaceTokenDto>> getPlayerTokens(int player_id, int game_id);
         Task<int> getAllTokens(int game_id);
+        Task getGameStatusId(int game_id, string outcome);
         Task<bool> gameExist(int game_id);
         Task<IReadOnlyCollection<PlayerDto>> getPlayers(int game_id);
         Task<IReadOnlyCollection<WinnerDto>> getWinners(int game_id);

@@ -175,6 +175,9 @@ namespace tictactoe.Repository
                         Game_Id = gameId
                     };
                     _gameDbContext.AddEntry<Winner>(win, "Add");
+
+                    await _gameDbContext.getGameStatusId(gameId, "GAME OVER");
+                    
                 }
 
                 if (winner == false)

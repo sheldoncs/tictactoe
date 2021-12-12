@@ -161,5 +161,14 @@ namespace tictactoe.Data.Database
 
             return (IReadOnlyCollection<WinnerDto>)result;
         }
+
+        public async Task getGameStatusId(int game_id, string outcome)
+        {
+            var result = await this.gameStatuses.FirstAsync(gs => gs.Game_Id == game_id);
+            result.Outcome = outcome;
+            await this.SaveChangesAsync();
+            
+            
+        }
     }
 }

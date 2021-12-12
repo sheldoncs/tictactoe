@@ -25,18 +25,18 @@ namespace tictactoe.Controllers
         {
             if (gameDto == null)
             {
-                return BadRequest(ModelState);
+                return BadRequest();
             }
             else
             {
                 if (gameDto.PlayerA == null)
                 {
-                    return BadRequest(ModelState);
+                    return BadRequest();
                     
                 }
                 if (gameDto.PlayerB == null)
                 {
-                    return BadRequest(ModelState);
+                    return BadRequest();
                 }
             }
 
@@ -56,7 +56,7 @@ namespace tictactoe.Controllers
             var result = await _gameService.GetGameStatus(gameId);
             if (result == null)
             {
-                return BadRequest(ModelState);
+                return BadRequest();
             }
 
             return Ok(result);
@@ -69,7 +69,7 @@ namespace tictactoe.Controllers
 
             if (result == null)
             {
-                return BadRequest(ModelState);
+                return BadRequest();
             }
             
             
